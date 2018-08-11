@@ -29,7 +29,7 @@ public class RegistrationActivity extends AppCompatActivity {
         EditText mobile = (EditText)findViewById(R.id.input_mobile);
         mobile.setBackgroundResource((R.drawable.backgroundtext));
 
-        TextView mEmailSignInButton = (TextView) findViewById(R.id.btn_signup);
+        Button mEmailSignInButton = (Button) findViewById(R.id.btn_signup);
         mEmailSignInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

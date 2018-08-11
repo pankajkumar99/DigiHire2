@@ -1,5 +1,6 @@
 package hire.digi.digihire;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,7 +26,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
-
+import java.util.List;
 
 
 public class EducationActivity extends AppCompatActivity {
@@ -45,6 +46,15 @@ public class EducationActivity extends AppCompatActivity {
                                    }
                                }
         );
+        Button nextButton = (Button) findViewById(R.id.btn_next);
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(EducationActivity.this, SalaryDetailsActivity.class);
+
+                EducationActivity.this.startActivity(myIntent);
+            }
+        });
         sendPost();
 
          }
@@ -155,13 +165,24 @@ public class EducationActivity extends AppCompatActivity {
 
    public void buttonClick()
     {
-        Spinner spinner = (Spinner) findViewById(R.id.age_spinner);
-        spinner.setBackgroundResource((R.drawable.backgroundtext));
+     //   Spinner spinner = (Spinner) findViewById(R.id.age_spinner);
+    //    spinner.setBackgroundResource((R.drawable.backgroundtext));
 // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.age_array, android.R.layout.simple_spinner_item);
+    //    ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+     //           R.array.age_array, android.R.layout.simple_spinner_item);
 // Specify the layout to use when the list of choices appears
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+   //     adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        List age = new ArrayList<String>();
+        for (int i = 18; i <= 60; i++) {
+            age.add(Integer.toString(i));
+        }
+        ArrayAdapter<Integer> spinnerArrayAdapter = new ArrayAdapter<Integer>(
+                this, android.R.layout.simple_spinner_item, age);
+        spinnerArrayAdapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item );
+
+       Spinner spinner = (Spinner)findViewById(R.id.age_spinner);
+        spinner.setAdapter(spinnerArrayAdapter);
 // Apply the adapter to the spinner
 
         TableLayout tl=(TableLayout)findViewById(R.id.tblEducation);
@@ -183,7 +204,7 @@ public class EducationActivity extends AppCompatActivity {
 
         ArrayAdapter<Degree> degreeadapter =
                 new ArrayAdapter<Degree>(getApplicationContext(),  android.R.layout.simple_spinner_dropdown_item, globalitems);
-        adapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item);
+        degreeadapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item);
 
         spinnerDegree.setAdapter(degreeadapter);
       //  spinnerDegree.setLayoutParams(params);
@@ -192,7 +213,7 @@ public class EducationActivity extends AppCompatActivity {
 
         ArrayAdapter<Area> areaadapter =
                 new ArrayAdapter<Area>(getApplicationContext(),  android.R.layout.simple_spinner_dropdown_item, globalAreas);
-        adapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item);
+        areaadapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item);
 
         spinnerArea.setAdapter(areaadapter);
        // spinnerArea.setLayoutParams(params);
@@ -205,7 +226,7 @@ public class EducationActivity extends AppCompatActivity {
 
         ArrayAdapter<Qualification> qualadapter =
                 new ArrayAdapter<Qualification>(getApplicationContext(),  android.R.layout.simple_spinner_dropdown_item, globalQualifications);
-        adapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item);
+        qualadapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item);
 
         spinnerQual.setAdapter(qualadapter);
       //  spinnerQual.setLayoutParams(params);
