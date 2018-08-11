@@ -4,5 +4,16 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="gray">#A9A9A9</color>
-    <color name="colorWhite">#FFFFFF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="digihire_blue">#ff213d55</color>
+    <color name="digihire_dark_blue">#ff082f50</color>
+    <color name="digihire_green">#ff33ca01</color>
+    <color name="digihire_green_dimmer">#ff48ab31</color>
+    <color name="digihire_grey">#ffececec</color>
+    <color name="digihire_light_blue">#ff428bca</color>
+    <color name="digihire_light_blue2">#ff4489c5</color>
+    <color name="digihire_light_blue_thinktime">#ff008dc6</color>
+    <color name="digihire_orange">#fff08b1f</color>
+    <color name="digihire_red">#ffdc0100</color>
 </resources>

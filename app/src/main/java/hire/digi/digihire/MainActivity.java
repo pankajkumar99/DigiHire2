@@ -3,6 +3,8 @@ package hire.digi.digihire;
 import android.app.Activity;
 
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import org.json.JSONObject;
 
@@ -34,14 +36,22 @@ String baseUrl="https://www.digihire.in/beta2/api/viewQuestionDetails";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.questionslist);
+        setContentView(R.layout.interview_questions);
+
         Button idbtn= (Button) findViewById(R.id.btnList);
         idbtn.setOnClickListener(  new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
             {
-                DisplayList();
+                RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+                // set a LinearLayoutManager with default vertical orientation
+                LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
+                recyclerView.setLayoutManager(linearLayoutManager);
+                //  call the constructor of CustomAdapter to send the reference and data to Adapter
+                CustomAdapter customAdapter = new CustomAdapter(MainActivity.this, new ArrayList<String>(globalitems));
+                recyclerView.setAdapter(customAdapter); // set the Adapter to RecyclerView
+                //DisplayList();
             }
         });
         sendPost();
