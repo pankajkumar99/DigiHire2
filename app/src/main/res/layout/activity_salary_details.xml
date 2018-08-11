@@ -5,7 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SalaryDetailsActivity">
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        android:padding="12dp"
+        android:text="Next"/>
     <Button android:id="@+id/btnAdd"
+        android:layout_toLeftOf="@id/btn_next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Salary Details"/>
