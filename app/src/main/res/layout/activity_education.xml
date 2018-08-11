@@ -7,7 +7,8 @@
     tools:context=".EducationActivity">
     <Button android:id="@+id/btnAdd"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="Add Qualification"/>
     <Spinner
         android:id="@+id/age_spinner"
         android:layout_width="fill_parent"

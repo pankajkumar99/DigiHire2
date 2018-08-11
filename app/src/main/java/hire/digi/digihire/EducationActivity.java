@@ -172,12 +172,12 @@ public class EducationActivity extends AppCompatActivity {
         textview.setTextColor(Color.GRAY);
         // create the layout params that will be used to define how your
         // button will be displayed
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+     //   LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+    //            LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         // Create LinearLayout
-            LinearLayout ll = new LinearLayout(this);
-            ll.setOrientation(LinearLayout.HORIZONTAL);
-            ll.addView(textview);
+       //     LinearLayout ll = new LinearLayout(this);
+      //      ll.setOrientation(LinearLayout.HORIZONTAL);
+      //      ll.addView(textview);
 
         Spinner spinnerDegree = new Spinner(this);
 
@@ -186,7 +186,7 @@ public class EducationActivity extends AppCompatActivity {
         adapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item);
 
         spinnerDegree.setAdapter(degreeadapter);
-        spinnerDegree.setLayoutParams(params);
+      //  spinnerDegree.setLayoutParams(params);
         tr1.addView(spinnerDegree);
         Spinner spinnerArea = new Spinner(this);
 
@@ -195,20 +195,20 @@ public class EducationActivity extends AppCompatActivity {
         adapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item);
 
         spinnerArea.setAdapter(areaadapter);
-        spinnerArea.setLayoutParams(params);
+       // spinnerArea.setLayoutParams(params);
 
         tr1.addView(spinnerArea);
         Spinner spinnerQual = new Spinner(this);
 
         TableRow tr2 = new TableRow(this);
-        tr2.setLayoutParams(new TableLayout.LayoutParams(TableLayout.LayoutParams.FILL_PARENT,TableLayout.LayoutParams.WRAP_CONTENT));
+       // tr2.setLayoutParams(new TableLayout.LayoutParams(TableLayout.LayoutParams.FILL_PARENT,TableLayout.LayoutParams.WRAP_CONTENT));
 
         ArrayAdapter<Qualification> qualadapter =
                 new ArrayAdapter<Qualification>(getApplicationContext(),  android.R.layout.simple_spinner_dropdown_item, globalQualifications);
         adapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item);
 
         spinnerQual.setAdapter(qualadapter);
-        spinnerQual.setLayoutParams(params);
+      //  spinnerQual.setLayoutParams(params);
         tr2.addView(spinnerQual);
 
         tl.addView(tr1, new TableLayout.LayoutParams(TableLayout.LayoutParams.FILL_PARENT, TableLayout.LayoutParams.WRAP_CONTENT));
