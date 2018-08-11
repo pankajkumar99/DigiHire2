@@ -27,6 +27,8 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".EducationActivity" />
         <activity android:name=".SalaryDetailsActivity"/>
+        <activity android:name=".MainActivity"/>
+
     </application>
 
 </manifest>

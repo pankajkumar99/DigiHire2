@@ -1,5 +1,6 @@
 package hire.digi.digihire;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -43,7 +44,15 @@ public class SalaryDetailsActivity extends AppCompatActivity {
                                    }
                                }
         );
+        Button nextButton = (Button) findViewById(R.id.btn_next);
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(SalaryDetailsActivity.this, MainActivity.class);
 
+                SalaryDetailsActivity.this.startActivity(myIntent);
+            }
+        });
 populatecombos();
 sendPost();
     }
